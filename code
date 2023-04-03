@@ -1,0 +1,33 @@
+import re
+import random
+
+from nltk.chat.util import Chat, reflections
+
+class FociChatbot(Chat):
+    def __init__(self):
+        super().__init__([], reflections)
+        p = self._pairs
+
+    def add(self, input, output):
+        if isinstance(output, str):
+            o = [output]
+        else:
+            o = output
+        self._pairs.append((re.compile(input, re.IGNORECASE), o))
+
+
+def add_response(input, output):
+    f.add(input, output)
+
+def converse():
+    f.converse()
+
+def respond(input):
+    print(f.respond(input))
+
+def reset():
+    global f
+    f = FociChatbot()
+
+
+f = FociChatbot()
