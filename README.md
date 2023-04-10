@@ -1,2 +1,0 @@
-# Rannlab-Chatbot
-Rannlab Chatbot
